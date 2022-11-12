@@ -18,7 +18,7 @@
     <body>
         <h1><a href="home.php"><?=$id?>'s home</a></h1>
         <form action="logout_process.php" method="post">
-            <p><input type="submit" value="Logout"></p>
+            <p><input type="submit" value="로그아웃"></p>
         </form>
         <ol>
             <?php read_data($id); ?>
@@ -28,7 +28,7 @@
             <input type="hidden" name="id" value="<?=$id?>">
             <p><input type="text" name="title" placeholder="title"></p>
             <p><textarea name="description" placeholder="description"></textarea></p>
-            <p><input type="submit"></p>
+            <p><input type="submit" value="완료"></p>
         </form>
     </body>
 </html>

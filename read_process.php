@@ -18,13 +18,13 @@
             <form action="delete_process.php" method="post">
                 <input type="hidden" name="title" value="'.$row['title'].'">
                 <input type="hidden" name="id" value="'.$row['id'].'">
-                <input type="submit" value="delete">
+                <input type="submit" value="삭제">
             </form>
             <form action="update.php" method="post">
                 <input type="hidden" name="title" value="'.$row['title'].'">
                 <input type="hidden" name="description" value="'.$row['description'].'">
                 <input type="hidden" name="id" value="'.$row['id'].'">
-                <input type="submit" value="update">
+                <input type="submit" value="수정">
             </form>
             ';
         }

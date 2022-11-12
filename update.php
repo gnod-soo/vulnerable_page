@@ -2,6 +2,7 @@
     $old_title = $_POST['title'];
     $old_description = $_POST['description'];
     echo '
+    <a href="home.php">돌아가기</a>
     <form action="update_process.php" method="post">
         <input type="hidden" name="id" value="'.$_POST['id'].'">
         <input type="hidden" name="old_title" value="'.$old_title.'">

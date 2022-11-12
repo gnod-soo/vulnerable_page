@@ -18,7 +18,7 @@
         $_SESSION['id'] = $id;
         header('Location: home.php');
     } else {
-        echo 'fuck!';
-        echo '<br><a href="index.php">go back</a>';
+        echo '<script>alert("로그인 실패");
+        window.location.href = "index.php";</script>';
     }
 ?>
