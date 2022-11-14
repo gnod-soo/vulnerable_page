@@ -23,8 +23,9 @@
             <p><input type="submit" value="로그인"></p>
         </form>
         <br>
-        기본 유저 로그인 정보<br>
+        Public User<br>
         id : user01<br>
-        pw : 11111111
+        pw : 11111111<br><br><br>
+		경희대학교 소프트웨어융합학과 한동수
     </body>
 </html>
