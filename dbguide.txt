@@ -1,0 +1,28 @@
+[USER]
+username: dbuser
+password: 111111
+All privileges in vulnerable_page
+
+[DATABASES]
+name: vulnerable_page
+characterset: utf8
+
+[TABLES]
+name: user
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| num   | int(11)      | NO   | PRI | NULL    | auto_increment |
+| id    | varchar(30)  | NO   |     | NULL    |                |
+| pw    | varchar(30)  | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+name: writing_data
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| num         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| id          | varchar(30)  | YES  |     | NULL    |                |
+| title       | varchar(300) | YES  |     | NULL    |                |
+| description | varchar(300) | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+
