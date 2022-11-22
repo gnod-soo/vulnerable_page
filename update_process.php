@@ -1,4 +1,5 @@
 <?php
+	session_start();
     $servername = "localhost";
     $username = "dbuser";
     $password = "111111";
@@ -8,7 +9,6 @@
     $title = $_POST['title'];
     $description = $_POST['description'];
     $old_title = $_POST['old_title'];
-    
 
     $sql = "
     UPDATE writing_data
@@ -17,7 +17,7 @@
     ";
     echo $sql;
     $result = mysqli_query($conn, $sql);
-    if($result === false){
+    if(($result === false) or ($_POST['id'] != $_SESSION['id'])){
         echo '에러(변경하지 못했습니다.)';
         error_log(mysqli_error($conn));
     } else {
