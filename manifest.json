@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "Mancity NFC App",
+  "short_name": "MNA",
+  "start_url": "./nfc.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Web NFC Scanner",
+  "icons": [{
+    "src": "myicon512.png",
+    "sizes": "",
+    "type": "image/png"
+  }, {
+    "src": "myicon.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}
