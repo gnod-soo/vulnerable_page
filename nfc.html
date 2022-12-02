@@ -1,22 +1,23 @@
-<html><head>
-	<meta charset="utf-8">
-	<meta name="mobile-web-app-capable" content="yes">
-    <title>Web NFC 스캐너</title>
-    <script>
-		// Add a global error event listener early on in the page load, to help ensure that browsers
-		// which don't support specific functionality still end up displaying a meaningful message.
-		window.addEventListener('error', function (error) {
-			if (ChromeSamples && ChromeSamples.setStatus) {
-				console.error(error);
-				ChromeSamples.setStatus(error.message + ' (Your browser may not support this feature.)');
-				error.preventDefault();
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="mobile-web-app-capable" content="yes">
+		<title>Web NFC 스캐너</title>
+		<script>
+			// Add a global error event listener early on in the page load, to help ensure that browsers
+			// which don't support specific functionality still end up displaying a meaningful message.
+			window.addEventListener('error', function (error) {
+				if (ChromeSamples && ChromeSamples.setStatus) {
+					console.error(error);
+					ChromeSamples.setStatus(error.message + ' (Your browser may not support this feature.)');
+					error.preventDefault();
+				}
+			});
+			function hideButton() {
+				document.getElementById('scanButton').style.display = 'none';
 			}
-		});
-		function hideButton() {
-			document.getElementById('scanButton').style.display = 'none';
-		}
-    </script>
-	참조: https://github.com/GoogleChrome/samples/tree/gh-pages/web-nfc
+		</script>
+		참조: https://github.com/GoogleChrome/samples/tree/gh-pages/web-nfc
   </head>
 
   <body>
@@ -35,10 +36,10 @@
 	</div>
 </div>
 <button id="scanButton" onclick="hideButton()">시작</button>
-	  
-	  
+	
+	
 	<script src="nfc.js"></script>
-  
+  	
 	<style>
 		@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
 		* {
