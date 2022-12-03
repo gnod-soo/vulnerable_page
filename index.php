@@ -13,6 +13,11 @@
 		</title>
     </head>
     <body>
+		<style>
+			body {
+				text-align: center;
+			}
+		</style>
         <h1><a href="index.php">Login Page</a></h1>
         <h2>
 			로그인 페이지입니다.

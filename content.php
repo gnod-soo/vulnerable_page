@@ -4,7 +4,6 @@
 	$title = $_GET['title'];
 	$description = $_GET['description'];
 	
-	
 	echo '<a href="home.php">돌아가기</a>';
 	echo '<h3>title: '.$title.'</h3>';
 	echo '<h4>writer: '.$id.'</h4>';
