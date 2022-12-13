@@ -56,7 +56,7 @@ CSRF
 
 - CSRF는 Cross Site Request Forgery의 약자로 피해자가 한 정상적인 요청인 것처럼 위조하여 공격자가 의도한 특정한 행동을 하도록 하는 공격 기법이다. 
 
-웹페이지 주소(12월 20일까지 유효): https://vulnerable-page-ofyle.run.goorm.io/ 깃헙 주소: https://github.com/gnod-soo/vulnerable\_page 
+웹페이지 주소(2022년 12월 20일까지 유효): https://vulnerable-page-ofyle.run.goorm.io/ 깃헙 주소: https://github.com/gnod-soo/vulnerable\_page 
 
 2. 로그인 페이지 
 1. SQL Injection 
@@ -135,7 +135,7 @@ PHPSESSID 복사해서 브라우저 쿠키에 삽입 -> 성공
 
 1. 아이디어 
 
-취약점  분석에  대해  시큐어  코딩으로  이를  해결할  수  있는  방안을  생각해보았다.  취약점  대응  이전의  소스코드 는  https://github.com/gnod-soo/vulnerable\_page에서 볼 수 있다. 
+취약점  분석에  대해  시큐어  코딩으로  이를  해결할  수  있는  방안을  생각해보았다.  취약점  대응  이전의  소스코드 는  https://github.com/gnod-soo/vulnerable\_page 에서 볼 수 있다. 
 
 1. SQL Injection 
 - 따옴표가  들어간  Payloads만  성공했으므로,  문자열  그대로  SQL  쿼리문에  전달되기  때문에  발생하는 문제라고 생각한다.  
