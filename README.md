@@ -54,7 +54,7 @@ CSRF
 
 - CSRF는 Cross Site Request Forgery의 약자로 피해자가 한 정상적인 요청인 것처럼 위조하여 공격자가 의도한 특정한 행동을 하도록 하는 공격 기법이다. 
 
-웹페이지 주소(2022년 12월 20일까지 유효): https://vulnerable-page-ofyle.run.goorm.io/ 깃헙 주소: https://github.com/gnod-soo/vulnerable\_page 
+웹페이지 주소(2022년 12월 20일까지 유효): https://vulnerable-page-ofyle.run.goorm.io/ 깃헙 주소: https://github.com/gnod-soo/vulnerable_page 
 
 2. 로그인 페이지 
 1. SQL Injection 
