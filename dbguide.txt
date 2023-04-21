@@ -1,11 +1,19 @@
+mysqli installation
+#apt-get install php7.3-cli php7.3-common php7.3-gd php7.3-json php7.3-mcrypt php7.3-mysql php7.3-fpm php7.3-mysqli
+
 [USER]
 username: dbuser
 password: 111111
 All privileges in vulnerable_page
 
+mysql>create user 'dbuser'@'localhost' identified by '111111';
+mysql>grant all privileges on vulnerable_page.* to dbuser@'localhost';
+
 [DATABASES]
 name: vulnerable_page
 characterset: utf8
+
+>CREATE DATABASE vulnerable_page default CHARACTER SET UTF8;
 
 [TABLES]
 name: user
@@ -16,6 +24,12 @@ name: user
 | id    | varchar(30)  | NO   |     | NULL    |                |
 | pw    | varchar(30)  | NO   |     | NULL    |                |
 +-------+--------------+------+-----+---------+----------------+
+mysql> create table user (
+    -> num int(11) not null primary key auto_increment,
+    -> id varchar(30),
+    -> pw varchar(30)
+    -> ) engine=innodb;
+
 name: writing_data
 +-------------+--------------+------+-----+---------+----------------+
 | Field       | Type         | Null | Key | Default | Extra          |
@@ -25,4 +39,10 @@ name: writing_data
 | title       | varchar(300) | YES  |     | NULL    |                |
 | description | varchar(300) | YES  |     | NULL    |                |
 +-------------+--------------+------+-----+---------+----------------+
-
+mysql> create table writing_data (
+    -> num int(11) not null primary key auto_increment,
+    -> id varchar(30),
+    -> title varchar(300),
+    -> description varchar(300)
+    -> ) engine=innodb;
+	
